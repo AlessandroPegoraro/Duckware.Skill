@@ -1,1 +1,2 @@
-# Duckware.Skill
+SwetlApp
+Alexa Skill

@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "GetBBCNews",
+      "slots": [
+        {
+          "name": "FeedName",
+          "type": "ListOfFeeds"
+        }
+      ]
+    }
+  ]
+}
