@@ -11,31 +11,33 @@ class ReadFeedRSSAction extends Action {
     }
 
     /**
-     * @param handlerInput
+     *
+     * @returns {Promise<string>} Returns an output containing the title of the pages linked in params and 4 title of the articles in the page
      */
-    run(handlerInput) {
-        return new Promise((resolve, reject) => {
-            let output = '';
-            this.params.forEach( param => {
-                parser.parseURL(param).then(data => {
-                    console.log("Parametro: " + param);
-                    output += 'Queste sono le notizie da: ' + data.title + '. <break time=\"1s\"/> ';
+    async run() {
+        let output = '';
+        for(let i=0; i<this.params.length; i++){
+            let param = this.params[i];
+            //console.log("Parametro: " + param);
+            await parser.parseURL(param).then(data => {
+                //console.log("Notizie di " + data.title);
+                output += 'Queste sono le notizie da: ' + data.title + '. <break time=\"1s\"/> ';
 
-                    let i = 0;
-                    data.items.forEach(item => {
-                        if (i <= 4) {
-                            output = output + item.title + '. <break time=\"1.5s\"/> ';
-                            i++;
-                        }
-                    });
-
-                    output += '. <break time=\"1.5s\"/> ';
-                }, error => {
-                    output += "Non riesco a leggere questo feed.";
+                let i = 0;
+                data.items.forEach(item => {
+                    if (i < 4) {
+                        //console.log('NOTIZIA: ' + item.title);
+                        output = output + item.title + '. <break time=\"1.5s\"/> ';
+                        i++;
+                    }
                 });
+
+                output += '. <break time=\"1.5s\"/> ';
+            }, () => {
+                output += "Non riesco a leggere questo feed.";
             });
-            resolve(output);
-        });
+        }
+        return output;
     }
 }
 

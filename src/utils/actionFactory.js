@@ -8,7 +8,7 @@ var exports = module.exports = {};
  *
  * @param name
  * @param params
- * @returns {Action}
+ * @returns {Action} Returns the appropriate Action depending on the the type of the action
  */
 function actionFactory(name, params) {
     switch (name) {

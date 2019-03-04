@@ -3,19 +3,18 @@ const { Action } = require('./Action.js');
 var exports = module.exports = {};
 
 class CustomMessageAction extends Action {
-    /**
-     * TODO implements Alexa output whit a customized message
-     */
-    run() {
-        return new Promise(resolve => {
-            let output = '';
-            this.params.forEach(param => {
-                console.log("Parametro: " + param);
-                output += param;
-            });
 
-            resolve(output);
+    /**
+     *
+     * @returns {Promise<string>} Returns an output based on the messages given as params
+     */
+    async run() {
+        let output = '';
+        this.params.forEach(param => {
+            //console.log("Parametro: " + param);
+            output += param;
         });
+        return output;
     }
 }
 

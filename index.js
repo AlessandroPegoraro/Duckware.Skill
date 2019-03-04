@@ -5,7 +5,7 @@ const {actionFactory} = require("./src/utils/actionFactory");
 const Alexa = require('ask-sdk');
 const axios = require('axios');
 const appName = 'SwetlApp';
-let email;
+let email = '';
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -26,12 +26,12 @@ const LaunchRequestHandler = {
 
             try {
                 const response = await axios.get(amznProfileUrl);
-                console.log(response.data.email);
+                //console.log(response.data.email);
                 email = response.data.email;
                 const name = response.data.name.split(" ")[0];
                 speechText = `Ciao, ${name}! Benvenuto in SwetlApp, come posso aiutarti?`;
             } catch (error) {
-                console.error(error);
+                //console.error(error);
                 speechText = 'Si è verificato un errore durante l\'esecuzione. Riprova più tardi.';
             }
 
@@ -52,45 +52,23 @@ const RunWorkflowHandler = {
         let request = handlerInput.requestEnvelope.request;
         let workflowName =  request.intent.slots.workflow.value;
         let speechText = '';
-        console.log(email);
-        console.log(workflowName);
+        //console.log(email);
+        //console.log(workflowName);
 
-        /*
-        const { accessToken } = handlerInput.requestEnvelope.context.System.user;
-        if(accessToken) {
-            const amznProfileUrl = `https://api.amazon.com/user/profile?access_token=${accessToken}`;
-
-            try {
-                const response = axios.get(amznProfileUrl);
-                const email = response.data.email;
-            } catch (error) {
-                console.error(error);
-                return handlerInput.responseBuilder
-                    .speak('Si è verificato un errore durante l\'esecuzione. Riprova più tardi.')
-                    .keepSession()
-                    .getResponse();
-            }
-        }
-*/
+        let actionList;
         await getWF(email, workflowName).then(
-            data => {
-                speechText += 'Va bene, eseguo ' + JSON.stringify(workflowName) + '.';
-                let actionList = JSON.parse(data);
-                console.log(JSON.stringify(data));
-
-                actionList.actions_records.forEach(action => {
-                        console.log("Esecuzione azione: " + action.action);
-                        actionFactory(action.action, action.params).run().then(data => speechText += data + '. <break time=\"2s\"/> ', error => speechText += error );
-                    });
-            },
-            error => {
-                console.log(error);
-            }
+            data => actionList = JSON.parse(data),
+            //error => console.log(error)
         );
-        /* TODO call db function */
-        /* TODO scan the Json and call the factory to get a list of Action*/
-        /* TODO call run for every Action in the list*/
-        // speechText + = run() di tutte le Action;
+
+        speechText += 'Va bene, eseguo ' + JSON.stringify(workflowName) + '.';
+        //console.log(JSON.stringify(actionList));
+
+        for(let i=0; i<actionList.actions_records.length; i++) {
+            let action = actionList.actions_records[i];
+            //console.log("Esecuzione azione: " + action.action);
+            speechText += await actionFactory(action.action, action.params).run();
+        }
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -127,7 +105,7 @@ const ReadRSSHandler = {
         let response;
         await (new ReadFeedRSSAction("read", "https://www.reddit.com/.rss")).run(handlerInput).then(
             data => response = data,
-            error => console.log(error)
+            //error => console.log(error)
         );
 
         return response;
@@ -198,7 +176,7 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-        console.log(`Error handled: ${error.message}`);
+        //console.log(`Error handled: ${error.message}`);
 
         return handlerInput.responseBuilder
             .speak('Scusa, non ho capito. Puoi ripetere?')
@@ -210,7 +188,7 @@ const ErrorHandler = {
 let skill;
 
 exports.handler = async function (event, context) {
-    console.log(`REQUEST++++${JSON.stringify(event)}`);
+    //console.log(`REQUEST++++${JSON.stringify(event)}`);
     if (!skill) {
         skill = Alexa.SkillBuilders.standard()
             .addRequestHandlers(
@@ -228,23 +206,7 @@ exports.handler = async function (event, context) {
     }
 
     const response = await skill.invoke(event, context);
-    console.log(`RESPONSE++++${JSON.stringify(response)}`);
+    //console.log(`RESPONSE++++${JSON.stringify(response)}`);
 
     return response;
 };
-
-/*
-const skillBuilder = Alexa.SkillBuilders.standard();
-
-exports.handler = skillBuilder.addRequestHandlers(
-    LaunchRequestHandler,
-    WorkflowRepeatHandler,
-    HelpIntentHandler,
-    CancelIntent,
-    StopIntentHandler,
-    SessionEndedRequestHandler,
-    ErrorHandler
-  )
-  .addErrorHandlers(ErrorHandler)
-  .lambda();
-*/

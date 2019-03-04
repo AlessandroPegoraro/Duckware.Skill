@@ -12,9 +12,9 @@ class Action {
     }
 
     /**
-     *TODO basic behavior
+     *
      */
-    run(handlerInput) {}
+    async run() {}
 }
 
 exports.Action = Action;
