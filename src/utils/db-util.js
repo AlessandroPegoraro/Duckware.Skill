@@ -4,8 +4,8 @@ var exports = module.exports = {};
 
 function getWF(username, idWF) {
     AWS.config.update({
-        region: "eu-west-1",
-        endpoint: "https://dynamodb.eu-west-1.amazonaws.com"
+        region: "eu-central-1",
+        endpoint: "https://dynamodb.eu-central-1.amazonaws.com"
     });
 
     let docClient = new AWS.DynamoDB.DocumentClient();

@@ -71,7 +71,7 @@ let https = require('https');
 function buildHttpGetOptions(accessToken) {
     return {
         //Replace the host with your cognito user pool domain
-        host: 'swetlapp-prova.auth.eu-west-1.amazoncognito.com',
+        host: 'swetlapp.auth.eu-central-1.amazoncognito.com',
         port: 443,
         path: '/oauth2/userInfo',
         method: 'GET',
