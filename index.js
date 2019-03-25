@@ -4,7 +4,6 @@ const {actionFactory} = require("./src/utils/actionFactory");
 
 const Alexa = require('ask-sdk');
 const appName = 'SwetlApp';
-let email = '';
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -29,33 +28,11 @@ const LaunchRequestHandler = {
             console.log('Username:' + response.username);
             const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
             sessionAttributes.username = response.username;
-            /*if (response.nickname.length > 0) {
-                let nickname = response.nickname;
-                const sessionAttributes = attributesManager.getSessionAttributes();
-                sessionAttributes.nickname = nickname;
-                console.log('Nickname: ' + nickname);
-                console.log('Name: ' + response.name);
-            }
-            */
-
         }
         catch (error) {
             console.log(`Error message: ${error.message}`);
         }
-        /* else {
-            const amznProfileUrl = `https://api.amazon.com/user/profile?access_token=${accessToken}`;
 
-            try {
-                const response = await axios.get(amznProfileUrl);
-                //console.log(response.data.email);
-                email = response.data.email;
-                const name = response.data.name.split(" ")[0];
-                speechText = 'Ciao, ${name}! Benvenuto in SwetlApp, come posso aiutarti?';
-            } catch (error) {
-                //console.error(error);
-                speechText = 'Si è verificato un errore durante l\'esecuzione. Riprova più tardi.';
-            }
-            */
         speechText = 'Ciao ' + handlerInput.attributesManager.getSessionAttributes().username +'! Benvenuto in swetlapp!';
             return handlerInput.responseBuilder
                 .speak(speechText)
@@ -117,17 +94,15 @@ const RunWorkflowHandler = {
         let request = handlerInput.requestEnvelope.request;
         let workflowName =  request.intent.slots.workflow.value;
         let speechText = '';
-        //console.log(email);
-        //console.log(workflowName);
+        console.log(handlerInput.attributesManager.getSessionAttributes().username);
+        console.log(workflowName);
 
         let actionList;
-        await getWF(email, workflowName).then(
-            data => actionList = JSON.parse(data),
-            //error => console.log(error)
+        await getWF('b60dabc1-78bc-487f-be8d-5a0ee9319a33', workflowName).then(
+            data => actionList = JSON.parse(data)
         );
 
         speechText += 'Va bene, eseguo ' + JSON.stringify(workflowName) + '.';
-        //console.log(JSON.stringify(actionList));
 
         for(let i=0; i<actionList.actions_records.length; i++) {
             let action = actionList.actions_records[i];
@@ -157,23 +132,6 @@ const WorkflowRepeatHandler = {
             .reprompt(speechText)
             .withSimpleCard(appName, speechText)
             .getResponse();
-    }
-};
-
-const ReadRSSHandler = {
-    canHandle(handlerInput){
-        let request = handlerInput.requestEnvelope.request;
-        return request.type === 'IntentRequest' && request.intent.name === 'RssIntent';
-    },
-
-    async handle(handlerInput) {
-        let response;
-        await (new ReadFeedRSSAction("read", "https://www.reddit.com/.rss")).run(handlerInput).then(
-            data => response = data,
-            //error => console.log(error)
-        );
-
-        return response;
     }
 };
 

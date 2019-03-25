@@ -11,9 +11,9 @@ function getWF(username, idWF) {
     let docClient = new AWS.DynamoDB.DocumentClient();
 
     let params = {
-        TableName : "Users",
-        ProjectionExpression:"Workflow",
-        KeyConditionExpression: "UserID = :usr",
+        TableName : "User-tevi37ekkbfvjgpusicgsjpt5m-testcog",
+        ProjectionExpression:"workflow",
+        KeyConditionExpression: "id = :usr",
         ExpressionAttributeValues: {
             ":usr": username
         }
@@ -29,11 +29,11 @@ function getWF(username, idWF) {
                     reject(null);
                 }
 
-                console.log(data.Count);
-                let hit = data.Items[0].Workflow.find(i => i.WorkflowID === idWF);
+                console.log("DATA: " + data.Count);
+                let hit = data.Items[0].workflow.find(i => i.name === idWF);
 
                 if (hit) {
-                    resolve(hit.WorkflowDefinition);
+                    resolve(hit.def);
                 }
                 else {
                     reject(null);
