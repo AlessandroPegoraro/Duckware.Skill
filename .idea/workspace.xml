@@ -6,17 +6,10 @@
     <option name="CUSTOM_SCOPE_NAME" value="src" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b6cea10-b9f5-4a68-a6f1-a270a7553f63" name="Default Changelist" comment="">
+    <list default="true" id="bd0e77a2-cc37-402a-8db2-ebcbb4841ad6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/AlexaSkill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/alexa-rss-small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/speechAssets/customSlots/ListOfFeeds.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/speechAssets/intentSchema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss-reader-alexa-master/speechAssets/utterances.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,39 +18,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/ReadFeedRSSAction.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/utils/db-util.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="92">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/actionFactory.js">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="26">
+              <caret line="156" column="26" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -92,15 +76,15 @@
         <option value="$PROJECT_DIR$/src/WelcomeAction.js" />
         <option value="$PROJECT_DIR$/src/factoryaction.js" />
         <option value="$PROJECT_DIR$/src/actionFactory.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/actions/ErrorAction.js" />
         <option value="$PROJECT_DIR$/src/utils/actionFactory.js" />
         <option value="$PROJECT_DIR$/src/actions/CustomMessageAction.js" />
         <option value="$PROJECT_DIR$/src/actions/ReadFeedRSSAction.js" />
         <option value="$PROJECT_DIR$/src/actions/Action.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/src/utils/db-util.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -113,43 +97,24 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SwetlApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwetlApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwetlApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwetlApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwetlApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwetlApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwetlApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwetlApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Duckware.Skill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Duckware.Skill" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -163,7 +128,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
     <property name="ts.external.directory.path" value="C:\Users\Sonia\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\183.5429.47\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -252,11 +217,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551697406289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Va?">
+      <created>1553518793107</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1553518793107</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85149000" />
+    <option name="totallyTimeSpent" value="85699000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,7 +242,7 @@
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -289,7 +261,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info active="true" anchor="bottom" id="TypeScript" order="10" visible="true" weight="0.24972129" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32941177" />
       <window_info active="true" anchor="bottom" id="Metrics" order="13" visible="true" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -312,7 +284,8 @@
     <MESSAGE value="Call to dynamo db" />
     <MESSAGE value="Actions almost working" />
     <MESSAGE value="Actions working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actions working" />
+    <MESSAGE value="Va?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Va?" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -367,13 +340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4316">
           <caret line="181" column="2" selection-start-line="181" selection-start-column="2" selection-end-line="181" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="156" column="26" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -464,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/rss-parser/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -513,17 +472,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/db-util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="156" column="26" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,6 @@ const {getWF} = require('./src/utils/db-util');
 const {actionFactory} = require("./src/utils/actionFactory");
 
 const Alexa = require('ask-sdk');
-const axios = require('axios');
 const appName = 'SwetlApp';
 let email = '';
 
