@@ -9,7 +9,7 @@ const twitter = new Twitter({
 
 var exports = module.exports = {};
 
-class TwitterReadAction extends Action {
+class TwitterWriteAction extends Action {
 
     constructor(name, params) {
         super(name, params);
@@ -20,16 +20,14 @@ class TwitterReadAction extends Action {
      * @returns {Promise<string>} Returns an output containing the top twitter of a specified account
      */
     async run() {
-        let output = ' ';
+        let output = ' Inviato il Tweet';
         let body = this.params[0];
-        await twitter.get('statuses/user_timeline', {screen_name: body, count: 3}).then(data => {
-          output+= "Ultimi tweet di "+data[0].user.name+": ";
-          for(let i =0; i< data.length; i++){
-            output+= data[i].text+". <break time=\"0.8s\"/> ";
-          }
+        await twitter.post('statuses/update', {status: body}).then(data => {
+          console.log(data);
         }, err => {
-          output+= "L'Account "+body+" non esiste";
+          console.log(err);
         });
+        console.log("un sacco");
         /*for(let i=0; i<this.params.length; i++){
             let param = this.params[i];
             //console.log("Parametro: " + param);
@@ -55,4 +53,4 @@ class TwitterReadAction extends Action {
     }
 }
 
-exports.TwitterReadAction = TwitterReadAction;
+exports.TwitterWriteAction = TwitterWriteAction;
