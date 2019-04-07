@@ -3,6 +3,7 @@ const { CustomMessageAction } = require('../actions/CustomMessageAction');
 const { ReadFeedRSSAction } = require('../actions/ReadFeedRSSAction.js');
 const { TwitterReadAction } = require('../actions/TwitterReadAction.js');
 const { TwitterWriteAction } = require('../actions/TwitterWriteAction.js');
+const { TVScheduleAction } = require('../actions/TVScheduleAction.js');
 
 var exports = module.exports = {};
 
@@ -12,6 +13,7 @@ var exports = module.exports = {};
  * @param params
  * @returns {Action} Returns the appropriate Action depending on the the type of the action
  */
+//TODO: serve il name nelle Actions???
 function actionFactory(name, params) {
     switch (name) {
         case "custom_message":
@@ -22,6 +24,8 @@ function actionFactory(name, params) {
             return new TwitterReadAction(name, params);
         case "write_tweet":
             return new TwitterWriteAction(name, params);
+        case "tv_schedule":
+            return new TVScheduleAction(name, params);
         default :
             return null;
     }

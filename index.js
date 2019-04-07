@@ -1,6 +1,7 @@
 const {ReadFeedRSSAction} = require("./src/actions/ReadFeedRSSAction");
 const {getWF} = require('./src/utils/db-util');
 const {actionFactory} = require("./src/utils/actionFactory");
+const https = require('https');
 
 const Alexa = require('ask-sdk');
 const appName = 'SwetlApp';
@@ -43,8 +44,6 @@ const LaunchRequestHandler = {
 };
 
 //Helper Function for calling the Cognito /oauth2/userInfo to get user info using the accesstoken
-let https = require('https');
-// https is a default part of Node.JS.  Read the developer doc:  https://nodejs.org/api/https.html
 function buildHttpGetOptions(accessToken) {
     return {
         //Replace the host with your cognito user pool domain
