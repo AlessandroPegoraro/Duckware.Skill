@@ -9,8 +9,8 @@ var exports = module.exports = {};
 
 /**
  *
- * @param name
- * @param params
+ * @param name {string}
+ * @param params {JSON}
  * @returns {Action} Returns the appropriate Action depending on the the type of the action
  */
 //TODO: serve il name nelle Actions???
@@ -27,7 +27,7 @@ function actionFactory(name, params) {
         case "tv_schedule":
             return new TVScheduleAction(name, params);
         default :
-            return null;
+            throw "Unknown action";
     }
 }
 

@@ -1,9 +1,8 @@
-const {ReadFeedRSSAction} = require("./src/actions/ReadFeedRSSAction");
-const {getWF} = require('./src/utils/db-util');
-const {actionFactory} = require("./src/utils/actionFactory");
 const https = require('https');
-
 const Alexa = require('ask-sdk');
+const {actionFactory} = require("./src/utils/ActionFactory");
+const {getDatabaseInstance, buildDatabaseParams} = require("./src/DatabaseInteractor");
+
 const appName = 'SwetlApp';
 
 const LaunchRequestHandler = {
@@ -16,7 +15,7 @@ const LaunchRequestHandler = {
 
         if (!accessToken) {
             speechText = 'Devi autenticarti con il tuo account Swetlapp per usare questa skill. Ti ho inviato le istruzioni nella tua App Alexa.';
-            return handlerInput.responseBuilder
+            return handlerInput.responsebuilder
                 .speak(speechText)
                 .withLinkAccountCard()
                 .getResponse();
@@ -84,6 +83,28 @@ function httpGet(options) {
     }));
 }
 
+function getWF(username, idWF) {
+    let params = buildDatabaseParams(
+        "User-tevi37ekkbfvjgpusicgsjpt5m-testcog",
+        "workflow",
+        "id",
+        username
+    );
+
+    return getDatabaseInstance().query(params).then(
+        data => {
+            if(data.Count === 0) return null;
+
+            let hit = data.Items[0].workflow.find(i => i.name === idWF);
+
+            if (hit) return hit.def;
+
+            return null;
+        },
+        () => null
+    );
+}
+
 const RunWorkflowHandler = {
     canHandle(handlerInput) {
         let request = handlerInput.requestEnvelope.request;
@@ -97,7 +118,7 @@ const RunWorkflowHandler = {
         console.log(workflowName);
 
         let actionList;
-        await getWF('b60dabc1-78bc-487f-be8d-5a0ee9319a33', workflowName).then(
+        await getWF(handlerInput.attributesManager.getSessionAttributes().username, workflowName).then(
             data => actionList = JSON.parse(data)
         );
 
@@ -105,8 +126,11 @@ const RunWorkflowHandler = {
 
         for(let i=0; i<actionList.actions_records.length; i++) {
             let action = actionList.actions_records[i];
-            //console.log("Esecuzione azione: " + action.action);
-            speechText += await actionFactory(action.action, action.params).run();
+            try {
+                speechText += await actionFactory(action.action, action.params).run();
+            } catch (e) {
+                speechText += "Azione non riconosciuta";
+            }
         }
 
         return handlerInput.responseBuilder
