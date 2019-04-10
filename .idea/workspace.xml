@@ -6,15 +6,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="src" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd0e77a2-cc37-402a-8db2-ebcbb4841ad6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DatabaseInteractor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/Action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/Action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/TVScheduleAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/TVScheduleAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/actionFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ActionFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/db-util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/db-util.js" afterDir="false" />
-    </list>
+    <list default="true" id="bd0e77a2-cc37-402a-8db2-ebcbb4841ad6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +15,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/ActionFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/CustomMessageAction.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="112" column="31" lean-forward="true" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+            <state relative-caret-position="554">
+              <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
               <folding>
                 <element signature="n#!!block;n#buildHttpGetOptions#0" />
                 <element signature="n#!!block;n#httpGet#0" />
@@ -265,7 +266,7 @@
       <workItem from="1554726635804" duration="7239000" />
       <workItem from="1554799163434" duration="3658000" />
       <workItem from="1554809010654" duration="8754000" />
-      <workItem from="1554827796723" duration="4700000" />
+      <workItem from="1554827796723" duration="5206000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1551551383565</created>
@@ -330,11 +331,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554653501904</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix">
+      <created>1554854060854</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554854060855</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152431000" />
+    <option name="totallyTimeSpent" value="152937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +437,8 @@
     <MESSAGE value="Removed axios dependency" />
     <MESSAGE value="cognito working" />
     <MESSAGE value="db test" />
-    <option name="LAST_COMMIT_MESSAGE" value="db test" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -640,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ActionFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ask-sdk/node_modules/ask-sdk-core/dist/skill/factory/BaseSkillBuilder.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -744,12 +746,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="112" column="31" lean-forward="true" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+        <state relative-caret-position="554">
+          <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
           <folding>
             <element signature="n#!!block;n#buildHttpGetOptions#0" />
             <element signature="n#!!block;n#httpGet#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ActionFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>

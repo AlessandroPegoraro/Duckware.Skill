@@ -13,7 +13,7 @@ var exports = module.exports = {};
  * @param params {JSON}
  * @returns {Action} Returns the appropriate Action depending on the the type of the action
  */
-//TODO: serve il name nelle Actions???
+
 function actionFactory(name, params) {
     switch (name) {
         case "custom_message":
