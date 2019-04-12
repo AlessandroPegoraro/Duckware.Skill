@@ -11,7 +11,6 @@ class CustomMessageAction extends Action {
     async run() {
         let output = '';
         this.params.forEach(param => {
-            //console.log("Parametro: " + param);
             output += param;
         });
         return output;
